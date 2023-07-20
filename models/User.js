@@ -10,7 +10,7 @@ class User extends Model {
 
 User.init(
   {
-    id: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -19,6 +19,10 @@ User.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    num_posts: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
     },
     email: {
       type: DataTypes.STRING,
