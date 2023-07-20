@@ -11,11 +11,11 @@ Blog.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    Title: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    title: {
+      type: DataTypes.STRING, // Change the data type to STRING or VARCHAR
+      defaultValue: 'Default Title', // Provide a default value for the title field
     },
-    blogPost: {
+    blog_post: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -25,11 +25,23 @@ Blog.init(
     },
     update_date: {
       type: DataTypes.DATE,
+    },
+    owner: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    updated_at: {
+      type: DataTypes.DATE,
       allowNull: false,
     },
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'blog',
