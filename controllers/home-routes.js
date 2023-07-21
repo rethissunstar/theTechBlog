@@ -6,11 +6,12 @@ const { Blog, User} = require('../models');
 router.get('/', async (req, res) => {
   try {
     const dbBlogData = await Blog.findAll({
+      attributes: ['blog_id', 'title', 'blog_post', 'creation_date', 'update_date'],
       include: [
         {
-          model: User, 
-          as: 'user', 
-          attributes: ['username'], 
+          model: User,
+          as: 'user',
+          attributes: ['username'],
         },
       ],
     });
@@ -18,7 +19,7 @@ router.get('/', async (req, res) => {
     const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
 
     res.render('homepage', {
-      blogs, 
+      blogs,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -37,7 +38,7 @@ router.get('/blog/:id', async (req, res) => {
       attributes: [
         'blog_id',
         'Title', 
-        'blogPost',
+        'blog_Post',
         'update_date', 
         'creation_date', 
       ],
@@ -47,7 +48,7 @@ router.get('/blog/:id', async (req, res) => {
       return res.status(404).json({ message: 'No blog found with this id' });
     }
 
-    const blog = dbBlogData.get({ plain: true });
+    const blog = dbBlogData.get({});
     res.render('blog', {
       blog,
       loggedIn: req.session.loggedIn,
@@ -56,6 +57,7 @@ router.get('/blog/:id', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+  
 });
 
 
