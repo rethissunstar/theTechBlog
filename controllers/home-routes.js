@@ -1,24 +1,24 @@
 const router = require('express').Router();
-const { Blog} = require('../models');
+const { Blog, User} = require('../models');
+
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
-
   try {
-    const dbBlogData = await Blogs.findAll({
+    const dbBlogData = await Blog.findAll({
       include: [
         {
-          model: Blogs,
-          attributes: ['Title', 'blogPost', 'blog_id','creation_date', 'update_date'],
+          model: User, 
+          as: 'user', 
+          attributes: ['username'], 
         },
       ],
     });
 
-    const blog = dbBlogData.map((blog) =>
-      Blog.get({ plain: true })
-    );
+    const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
+
     res.render('homepage', {
-      blog,
+      blogs, 
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET one blog - this used to be get one gallery
-const Blog = require('../models/Blog'); 
+//const Blog = require('../models/Blog'); 
 
 
 router.get('/blog/:id', async (req, res) => {
