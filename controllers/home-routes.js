@@ -8,9 +8,9 @@ router.get('/', async (req, res) => {
     const dbBlogData = await Blog.findAll({
       include: [
         {
-          model: User, // Use the User model
-          as: 'user', // Use the alias 'user' for the User model
-          attributes: ['username'], // Add any attributes you want to include from the User model
+          model: User, 
+          as: 'user', 
+          attributes: ['username'], 
         },
       ],
     });
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     const blogs = dbBlogData.map((blog) => blog.get({ plain: true }));
 
     res.render('homepage', {
-      blogs, // Use the correct variable name here
+      blogs, 
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {

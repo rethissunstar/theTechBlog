@@ -12,8 +12,8 @@ Blog.init(
       autoIncrement: true,
     },
     title: {
-      type: DataTypes.STRING, // Change the data type to STRING or VARCHAR
-      defaultValue: 'Default Title', // Provide a default value for the title field
+      type: DataTypes.STRING, 
+      defaultValue: 'Default Title', 
     },
     blog_post: {
       type: DataTypes.STRING,
