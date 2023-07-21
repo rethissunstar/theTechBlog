@@ -26,7 +26,7 @@ Blog.init(
     update_date: {
       type: DataTypes.DATE,
     },
-    owner: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
