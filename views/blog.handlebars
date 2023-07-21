@@ -4,9 +4,10 @@
   <h4>Updated on: {{format_time blog.update_date}}</h4>
   {{#if loggedIn}}
   <section class="flex-row justify-center">
-    {{#each blog as |blog|}}
+    {{!-- {{#each blog as |blog|}}
     {{> blog-details}}
-    {{/each}}
+    {{/each}} --}}
+    {{blog-details}}
   </section>
 </section>
 {{else}}
