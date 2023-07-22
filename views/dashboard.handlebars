@@ -1,0 +1,55 @@
+{{!-- 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Welcome to Your Dashboard</h1>
+  <p>Create a new post from the <a href="/dashboard/create">Create Post</a> page.</p>
+
+  {{#if posts.length}}
+    <ul>
+        
+      {{#each posts}}
+        <li>
+          <a href="/blog/{{this.blog_id}}">{{this.title}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>No posts found. Create a new post from the <a href="/dashboard/create">Create Post</a> page.</p>
+  {{/if}}
+</body>
+</html> --}}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Welcome to Your Dashboard</h1>
+  
+  {{#if loggedIn}}
+    <p>You are logged in as {{loggedInUser}}</p>
+    
+  {{else}}
+    
+  {{/if}}
+
+  <p>Create a new post from the <a href="/dashboard-create">Create Post</a> page.</p>
+
+  {{#if posts.length}}
+    <ul>
+      {{#each posts}}
+        <li>
+          <a href="/blog/{{this.blog_id}}">{{this.title}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>No posts found. Create a new post from the <a href="/dashboard-create">Create Post</a> page.</p>
+  {{/if}}
+</body>
+</html>
