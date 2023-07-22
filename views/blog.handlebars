@@ -1,5 +1,5 @@
-<section class="container">
-  <h3 class="blog-title">{{blog.Title}}</h3>
+<section class="mainEl">
+  <h3 class="blog-title">{{blog.title}}</h3>
   <h4>Created on: {{format_time blog.creation_date}}</h4>
   <h4>Updated on: {{format_time blog.update_date}}</h4>
   {{#if loggedIn}}
@@ -7,8 +7,8 @@
     {{!-- {{#each blog as |blog|}}
     {{> blog-details}}
     {{/each}} --}}
-    {{blog-details}}
-  </section>
+    {{> oneblog}}
+      </section>
 </section>
 {{else}}
 <a href="/login">You must login first to view this page</a>
