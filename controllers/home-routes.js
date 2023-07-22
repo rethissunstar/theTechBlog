@@ -6,7 +6,7 @@ const { Blog, User} = require('../models');
 router.get('/', async (req, res) => {
   try {
     const dbBlogData = await Blog.findAll({
-      attributes: ['blog_id', 'title', 'blog_post', 'creation_date', 'update_date'],
+      attributes: ['blog_id', 'title', 'blog_post', 'creation_date', 'update_date', 'username'],
       include: [
         {
           model: User,
@@ -34,21 +34,23 @@ router.get('/', async (req, res) => {
 
 router.get('/blog/:id', async (req, res) => {
   try {
-    const dbBlogData = await Blog.findByPk(req.params.id, {
-      attributes: [
-        'blog_id',
-        'Title', 
-        'blog_Post',
-        'update_date', 
-        'creation_date', 
+    const blogId = req.params.id;
+    const dbBlogData = await Blog.findOne({
+      where: { blog_id: blogId },
+      attributes: ['blog_id', 'title', 'blog_post', 'creation_date', 'update_date','username'],
+      include: [
+        {
+          model: User,
+          as: 'user',
+          attributes: ['username'],
+        },
       ],
     });
 
     if (!dbBlogData) {
       return res.status(404).json({ message: 'No blog found with this id' });
     }
-
-    const blog = dbBlogData.get({});
+    const blog = dbBlogData.get({ plain: true });
     res.render('blog', {
       blog,
       loggedIn: req.session.loggedIn,
