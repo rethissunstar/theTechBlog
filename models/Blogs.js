@@ -21,23 +21,19 @@ Blog.init(
     },
     creation_date: {
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW, 
       allowNull: false,
     },
     update_date: {
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW, 
+      allowNull: false,
     },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    created_at: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    updated_at: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
+ 
   },
   {
     sequelize,

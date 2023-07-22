@@ -76,6 +76,42 @@ nav a:hover {
   align-items: center;
 }
 
+.titleUpdate{
+  flex: 4;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.postUpdate{
+  flex: 4;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.textbox{
+  height: 200px;
+  width: 400px;
+}
+.updateButton{
+  flex: 4;
+  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 .btn-no-style {
   background: none;
   border: none;

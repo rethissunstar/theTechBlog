@@ -1,15 +1,28 @@
-<section class="mainEl">
+{{!-- <section class="mainEl">
   <h3 class="blog-title">{{blog.title}}</h3>
   <h4>Created on: {{format_time blog.creation_date}}</h4>
   <h4>Updated on: {{format_time blog.update_date}}</h4>
   {{#if loggedIn}}
-  <section class="flex-row justify-center">
-    {{!-- {{#each blog as |blog|}}
-    {{> blog-details}}
-    {{/each}} --}}
-    {{> oneblog}}
+  <section class="flex-row justify-center"> --}}
+   
+    {{!-- {{> oneblog}}
       </section>
 </section>
 {{else}}
 <a href="/login">You must login first to view this page</a>
+{{/if}} --}}
+
+
+{{#if isOwner}}
+   <a href="/update/{{blog.blog_id}}" class="btn">Update</a>
+{{/if}}
+<h3 class="blog-title">{{blog.title}}</h3>
+<h4>Created on: {{format_time blog.creation_date}}</h4>
+<h4>Updated on: {{format_time blog.update_date}}</h4>
+{{#if loggedIn}}
+  <section class="flex-row justify-center">
+    {{> oneblog}}
+  </section>
+{{else}}
+  <a href="/login">You must login first to view this page</a>
 {{/if}}
