@@ -1,15 +1,13 @@
 
 <h3>Update Blog</h3>
-<form action= "/blog/{{blog.blog_id}}" method="'post">
-
-<div class = 'titleUpdate'>
-  <h2>
-    <input type="text" name="title" value="{{blog.title}}">
-  </h2>  
-</div>
-  <div class = 'postUpdate'>
-  <textarea class = 'textbox' name="blog_post">{{blog.blog_post}}</textarea>
+<form action="/update-complete/{{blog.blog_id}}" method="post">
+  <div class="titleUpdate">
+    <h2>
+      <input type="text" name="title" value="{{blog.title}}">
+    </h2>  
   </div>
-  
-  <button class = 'updateButton' type="submit">Update Blog</button>
+  <div class="postUpdate">
+    <textarea class="textbox" name="blog_post">{{blog.blog_post}}</textarea>
+  </div>
+  <button class="updateButton" type="submit">Update Blog</button>
 </form>
