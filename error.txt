@@ -1,0 +1,98 @@
+$ heroku logs --tail
+2023-07-24T21:12:21.986584+00:00 app[web.1]: 
+2023-07-24T21:12:21.986611+00:00 app[web.1]: > museum-paintings@1.0.0 start
+2023-07-24T21:12:21.986611+00:00 app[web.1]: > node server.js
+2023-07-24T21:12:21.986612+00:00 app[web.1]:
+2023-07-24T21:12:22.293474+00:00 app[web.1]: node:internal/modules/cjs/loader:1340
+2023-07-24T21:12:22.293486+00:00 app[web.1]: return process.dlopen(module, path.toNamespacedPath(filename));
+2023-07-24T21:12:22.293489+00:00 app[web.1]: ^
+2023-07-24T21:12:22.293490+00:00 app[web.1]:
+2023-07-24T21:12:22.293491+00:00 app[web.1]: Error: /app/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node: invalid ELF header2023-07-24T21:12:22.293491+00:00 app[web.1]: at Module._extensions..node (node:internal/modules/cjs/loader:1340:18)
+2023-07-24T21:12:22.293492+00:00 app[web.1]: at Module.load (node:internal/modules/cjs/loader:1119:32)
+2023-07-24T21:12:22.293493+00:00 app[web.1]: at Module._load (node:internal/modules/cjs/loader:960:12)
+2023-07-24T21:12:22.293493+00:00 app[web.1]: at Module.require (node:internal/modules/cjs/loader:1143:19)
+2023-07-24T21:12:22.293493+00:00 app[web.1]: at require (node:internal/modules/cjs/helpers:110:18)
+2023-07-24T21:12:22.293493+00:00 app[web.1]: at Object.<anonymous> (/app/node_modules/bcrypt/bcrypt.js:6:16)
+2023-07-24T21:12:22.293493+00:00 app[web.1]: at Module._compile (node:internal/modules/cjs/loader:1256:14)
+2023-07-24T21:12:22.293493+00:00 app[web.1]: at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+2023-07-24T21:12:22.293493+00:00 app[web.1]: at Module.load (node:internal/modules/cjs/loader:1119:32)
+2023-07-24T21:12:22.293494+00:00 app[web.1]: at Module._load (node:internal/modules/cjs/loader:960:12) {
+2023-07-24T21:12:22.293497+00:00 app[web.1]: code: 'ERR_DLOPEN_FAILED'
+2023-07-24T21:12:22.293497+00:00 app[web.1]: }
+2023-07-24T21:12:22.293501+00:00 app[web.1]:
+2023-07-24T21:12:22.293501+00:00 app[web.1]: Node.js v18.17.0
+2023-07-24T21:12:22.299136+00:00 app[web.1]: npm notice
+2023-07-24T21:12:22.299189+00:00 app[web.1]: npm notice New minor version of npm available! 9.6.7 -> 9.8.1
+2023-07-24T21:12:22.299336+00:00 app[web.1]: npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.8.1>
+2023-07-24T21:12:22.299362+00:00 app[web.1]: npm notice Run `npm install -g npm@9.8.1` to update!
+2023-07-24T21:12:22.299456+00:00 app[web.1]: npm notice
+2023-07-24T21:12:22.429983+00:00 heroku[web.1]: Process exited with status 1
+2023-07-24T21:12:22.465586+00:00 heroku[web.1]: State changed from starting to crashed
+2023-07-24T21:13:52.423739+00:00 heroku[web.1]: State changed from crashed to starting
+2023-07-24T21:13:55.125480+00:00 heroku[web.1]: Starting process with command `npm start`
+2023-07-24T21:13:56.765808+00:00 app[web.1]:
+2023-07-24T21:13:56.765839+00:00 app[web.1]: > museum-paintings@1.0.0 start
+2023-07-24T21:13:56.765840+00:00 app[web.1]: > node server.js
+2023-07-24T21:13:56.765840+00:00 app[web.1]:
+2023-07-24T21:13:57.086455+00:00 app[web.1]: node:internal/modules/cjs/loader:1340
+2023-07-24T21:13:57.086457+00:00 app[web.1]: return process.dlopen(module, path.toNamespacedPath(filename));
+2023-07-24T21:13:57.086457+00:00 app[web.1]: ^
+2023-07-24T21:13:57.086458+00:00 app[web.1]:
+2023-07-24T21:13:57.086458+00:00 app[web.1]: Error: /app/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node: invalid ELF header2023-07-24T21:13:57.086459+00:00 app[web.1]: at Module._extensions..node (node:internal/modules/cjs/loader:1340:18)
+2023-07-24T21:13:57.086459+00:00 app[web.1]: at Module.load (node:internal/modules/cjs/loader:1119:32)
+2023-07-24T21:13:57.086459+00:00 app[web.1]: at Module._load (node:internal/modules/cjs/loader:960:12)
+2023-07-24T21:13:57.086459+00:00 app[web.1]: at Module.require (node:internal/modules/cjs/loader:1143:19)
+2023-07-24T21:13:57.086460+00:00 app[web.1]: at require (node:internal/modules/cjs/helpers:110:18)
+2023-07-24T21:13:57.086460+00:00 app[web.1]: at Object.<anonymous> (/app/node_modules/bcrypt/bcrypt.js:6:16)
+2023-07-24T21:13:57.086460+00:00 app[web.1]: at Module._compile (node:internal/modules/cjs/loader:1256:14)
+2023-07-24T21:13:57.086460+00:00 app[web.1]: at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+2023-07-24T21:13:57.086461+00:00 app[web.1]: at Module.load (node:internal/modules/cjs/loader:1119:32)
+2023-07-24T21:13:57.086461+00:00 app[web.1]: at Module._load (node:internal/modules/cjs/loader:960:12) {
+2023-07-24T21:13:57.086462+00:00 app[web.1]: code: 'ERR_DLOPEN_FAILED'
+2023-07-24T21:13:57.086462+00:00 app[web.1]: }
+2023-07-24T21:13:57.086465+00:00 app[web.1]:
+2023-07-24T21:13:57.086465+00:00 app[web.1]: Node.js v18.17.0
+2023-07-24T21:13:57.091959+00:00 app[web.1]: npm notice
+2023-07-24T21:13:57.092014+00:00 app[web.1]: npm notice New minor version of npm available! 9.6.7 -> 9.8.1
+2023-07-24T21:13:57.092222+00:00 app[web.1]: npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.8.1>
+2023-07-24T21:13:57.092249+00:00 app[web.1]: npm notice Run `npm install -g npm@9.8.1` to update!
+2023-07-24T21:13:57.092345+00:00 app[web.1]: npm notice
+2023-07-24T21:13:57.224273+00:00 heroku[web.1]: Process exited with status 1
+2023-07-24T21:13:57.254313+00:00 heroku[web.1]: State changed from starting to crashed
+2023-07-24T21:17:42.000000+00:00 app[api]: Build started by user rethissunstar@gmail.com
+2023-07-24T21:17:58.972861+00:00 app[api]: Deploy 9a4cb4d3 by user rethissunstar@gmail.com
+2023-07-24T21:17:58.972861+00:00 app[api]: Release v13 created by user rethissunstar@gmail.com
+2023-07-24T21:17:59.000000+00:00 app[api]: Build succeeded
+2023-07-24T21:17:59.706839+00:00 heroku[web.1]: State changed from crashed to starting
+2023-07-24T21:18:02.266044+00:00 heroku[web.1]: Starting process with command `npm start`
+2023-07-24T21:18:03.823061+00:00 app[web.1]:
+2023-07-24T21:18:03.823075+00:00 app[web.1]: > museum-paintings@1.0.0 start
+2023-07-24T21:18:03.823079+00:00 app[web.1]: > node server.js
+2023-07-24T21:18:03.823079+00:00 app[web.1]:
+2023-07-24T21:18:04.141843+00:00 app[web.1]: node:internal/modules/cjs/loader:1340
+2023-07-24T21:18:04.141847+00:00 app[web.1]: return process.dlopen(module, path.toNamespacedPath(filename));
+2023-07-24T21:18:04.141848+00:00 app[web.1]: ^
+2023-07-24T21:18:04.141848+00:00 app[web.1]:
+2023-07-24T21:18:04.141848+00:00 app[web.1]: Error: /app/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node: invalid ELF header2023-07-24T21:18:04.141849+00:00 app[web.1]: at Module._extensions..node (node:internal/modules/cjs/loader:1340:18)
+2023-07-24T21:18:04.141849+00:00 app[web.1]: at Module.load (node:internal/modules/cjs/loader:1119:32)
+2023-07-24T21:18:04.141849+00:00 app[web.1]: at Module._load (node:internal/modules/cjs/loader:960:12)
+2023-07-24T21:18:04.141849+00:00 app[web.1]: at Module.require (node:internal/modules/cjs/loader:1143:19)
+2023-07-24T21:18:04.141850+00:00 app[web.1]: at require (node:internal/modules/cjs/helpers:110:18)
+2023-07-24T21:18:04.141850+00:00 app[web.1]: at Object.<anonymous> (/app/node_modules/bcrypt/bcrypt.js:6:16)
+2023-07-24T21:18:04.141850+00:00 app[web.1]: at Module._compile (node:internal/modules/cjs/loader:1256:14)
+2023-07-24T21:18:04.141850+00:00 app[web.1]: at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+2023-07-24T21:18:04.141851+00:00 app[web.1]: at Module.load (node:internal/modules/cjs/loader:1119:32)
+2023-07-24T21:18:04.141851+00:00 app[web.1]: at Module._load (node:internal/modules/cjs/loader:960:12) {
+2023-07-24T21:18:04.141851+00:00 app[web.1]: code: 'ERR_DLOPEN_FAILED'
+2023-07-24T21:18:04.141851+00:00 app[web.1]: }
+2023-07-24T21:18:04.141855+00:00 app[web.1]:
+2023-07-24T21:18:04.141855+00:00 app[web.1]: Node.js v18.17.0
+2023-07-24T21:18:04.147758+00:00 app[web.1]: npm notice
+2023-07-24T21:18:04.147812+00:00 app[web.1]: npm notice New minor version of npm available! 9.6.7 -> 9.8.1
+2023-07-24T21:18:04.148020+00:00 app[web.1]: npm notice Changelog: <https://github.com/npm/cli/releases/tag/v9.8.1>
+2023-07-24T21:18:04.148048+00:00 app[web.1]: npm notice Run `npm install -g npm@9.8.1` to update!
+2023-07-24T21:18:04.148139+00:00 app[web.1]: npm notice
+2023-07-24T21:18:04.303818+00:00 heroku[web.1]: Process exited with status 1
+2023-07-24T21:18:04.332687+00:00 heroku[web.1]: State changed from starting to crashed
+2023-07-24T21:18:08.718529+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=sunstar-tech-blog-b9c08806740a.herokuapp.com request_id=8a80f333-989f-48f5-bc14-94ec5563c035 fwd="70.31.111.202" dyno= connect= service= status=503 bytes= protocol=https
+2023-07-24T21:18:08.851200+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=sunstar-tech-blog-b9c08806740a.herokuapp.com request_id=04107f34-21fa-49ba-9f58-a3a4820e2ea4 fwd="70.31.111.202" dyno= connect= service= status=503 bytes= protocol=https
