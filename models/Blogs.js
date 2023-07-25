@@ -31,7 +31,10 @@ Blog.init(
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: false,
+      references: {
+        model: 'User',
+        key: 'username'
+      }
     },
  
   },
