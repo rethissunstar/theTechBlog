@@ -201,9 +201,8 @@ router.get('/dashboard-create', async (req, res) => {
 router.post('/dashboard-create', async (req, res) => {
   try {
     const { title, content } = req.body;
-
     const loggedInUser = req.session.loggedIn ? req.session.username : null;
-
+ 
     const newPost = await Blog.create({
       title,
       blog_post: content,
@@ -212,24 +211,27 @@ router.post('/dashboard-create', async (req, res) => {
       updated_at: new Date(), 
     });
 
-    res.redirect('/dashboard');
-    const userPosts = await Blog.findAll({
+       const userPosts = await Blog.findAll({
       where: { username: loggedInUser },
       attributes: ['blog_id', 'title', 'blog_post', 'creation_date', 'update_date'],
     });
 
     console.log(userPosts);
 
-    res.render('dashboard-create', {
+     res.render('dashboard-create', {
       loggedIn: req.session.loggedIn,
       username: req.session.username,
       posts: userPosts.map(post => post.get({ plain: true })),
+    })
+    .then(() => {
+      res.redirect('/dashboard');
     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
 
 
 // Login route
