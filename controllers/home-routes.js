@@ -147,10 +147,8 @@ router.get('/dashboard', async (req, res) => {
       return res.redirect('/login');
     }
 
-    const loggedInUser = req.session.loggedIn ? req.session.username : null;
-
     const userPosts = await Blog.findAll({
-      where: { username: loggedInUser },
+      where: { username: req.session.username },
       attributes: ['blog_id', 'title', 'blog_post', 'creation_date', 'update_date'],
     });
 
@@ -167,6 +165,7 @@ router.get('/dashboard', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 
 //create route
@@ -198,39 +197,6 @@ router.get('/dashboard-create', async (req, res) => {
 });
 
 
-// router.post('/dashboard-create', async (req, res) => {
-//   try {
-//     const { title, content } = req.body;
-//     const loggedInUser = req.session.loggedIn ? req.session.username : null;
- 
-//     const newPost = await Blog.create({
-//       title,
-//       blog_post: content,
-//       username: loggedInUser,
-//       creation_date: new Date(),
-//       updated_at: new Date(), 
-//     });
-
-//        const userPosts = await Blog.findAll({
-//       where: { username: loggedInUser },
-//       attributes: ['blog_id', 'title', 'blog_post', 'creation_date', 'update_date'],
-//     });
-
-//     console.log(userPosts);
-
-//      res.render('dashboard-create', {
-//       loggedIn: req.session.loggedIn,
-//       username: req.session.username,
-//       posts: userPosts.map(post => post.get({ plain: true })),
-//     })
-//     .then(() => {
-//       res.redirect('/dashboard');
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
 router.post('/dashboard-create', async (req, res) => {
   try {
     const { title, content } = req.body;
